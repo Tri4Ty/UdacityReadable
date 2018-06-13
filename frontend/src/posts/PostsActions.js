@@ -42,8 +42,7 @@ const postsFoundEvent = (posts) => ({
 
 export const fetchAllPosts = () => dispatch => (
 	fetch(GET_ALL_POSTS_URL, { 
-    	headers: { 'Authorization': 'whatever-you-want' },
-        credentials: 'include' 
+    	headers: { 'Authorization': 'whatever-you-want' }
     })
     .then( (res) => res.text() )
     .then((data) => {
@@ -53,8 +52,7 @@ export const fetchAllPosts = () => dispatch => (
 
 export const fetchAllCategoryPosts = (category) => dispatch => (
   fetch(GET_ALL_CATEGORY_POSTS_URL + category + '/posts', { 
-    	headers: { 'Authorization': 'whatever-you-want' },
-        credentials: 'include' 
+    	headers: { 'Authorization': 'whatever-you-want' }
     })
     .then( (res) => res.text() )
     .then((data) => {
@@ -69,8 +67,7 @@ const postDetailsFoundEvent = (postDetails) => ({
 
 export const getPostDetails = (id) => dispatch => (
   fetch(GET_SINGLE_POSTS_URL + id, { 
-    	headers: { 'Authorization': 'whatever-you-want' },
-        credentials: 'include' 
+    	headers: { 'Authorization': 'whatever-you-want' }
     })
     .then( (res) => res.text() )
     .then((data) => {
@@ -89,7 +86,6 @@ export const createNewPost = newPost => dispatch => (
           'Authorization': 'whatever-you-want',
           'content-type': 'application/json'
         },
-        credentials: 'include',
         body: JSON.stringify(newPost)
 	})
 	.then( () => {
@@ -106,7 +102,6 @@ export const editExistingPost = updatedPost => dispatch => (
           'Authorization': 'whatever-you-want',
           'content-type': 'application/json'
         },
-        credentials: 'include',
         body: JSON.stringify(updatedPost)
 	})
 	.then( () => {
@@ -119,8 +114,7 @@ export const editExistingPost = updatedPost => dispatch => (
 export const deletePost = postId => dispatch => (  
   fetch(DELETE_POST_URL + postId, {
         method: 'DELETE',
-    	headers: { 'Authorization': 'whatever-you-want' },
-        credentials: 'include'
+    	headers: { 'Authorization': 'whatever-you-want' }
 	})
 	.then( () => {
       dispatch(postModifiedEvent());
@@ -136,7 +130,6 @@ export const voteOnPost = (id, vote) => {
           'Authorization': 'whatever-you-want',
           'content-type': 'application/json'
         },
-        credentials: 'include',
         body: JSON.stringify({ option: vote })
 	})
 	.then( () => {

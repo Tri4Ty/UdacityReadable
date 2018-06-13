@@ -1,4 +1,4 @@
-import { REACT_APP_BACKEND } from '../AppConstants';
+import { api } from '../AppConstants';
 
 export const postsActionTypes = {
   SHOW_POST_FORM: 'SHOW_POST_FORM',
@@ -20,22 +20,22 @@ export const postsAttributes = {
 };
 
 // `POST /posts` | Add a new post. | **id** - UUID should be fine, but any unique id will work <br> **timestamp** - [Timestamp] Can in whatever format you like, you can use `Date.now()` if you like. <br> **title** - [String] <br> **body** - [String] <br> **owner** - [String] <br> **category** -  Any of the categories listed in `categories.js`. Feel free to extend this list as you desire.
-export const CREATE_NEW_POST_URL = `${process.env.REACT_APP_BACKEND}/posts`;
+export const CREATE_NEW_POST_URL = `${api}/posts`;
 
 // `GET /posts` | Get all of the posts. Useful for the main page when no category is selected.
-export const GET_ALL_POSTS_URL = `${process.env.REACT_APP_BACKEND}/posts`;
+export const GET_ALL_POSTS_URL = `${api}/posts`;
 
 // `GET /:category/posts` | Get all of the posts for a particular category.
-export const GET_ALL_CATEGORY_POSTS_URL = `${process.env.REACT_APP_BACKEND}/`;
+export const GET_ALL_CATEGORY_POSTS_URL = `${api}/`;
 
 // `POST /posts/:id` | Used for voting on a post. | **option** - [String]: Either `"upVote"` or `"downVote"`
-export const GET_VOTE_POSTS_URL = `${process.env.REACT_APP_BACKEND}/posts/`; 
+export const GET_VOTE_POSTS_URL = `${api}/posts/`;
 
 // `GET /posts/:id` | Get the details of a single post.
-export const GET_SINGLE_POSTS_URL = `${process.env.REACT_APP_BACKEND}/posts/`; 
+export const GET_SINGLE_POSTS_URL = `${api}/posts/`;
 
 // `PUT /posts/:id` | Edit the details of an existing post. | **title** - [String] <br> **body** - [String]
-export const UPDATE_EXISTING_POST_URL = `${process.env.REACT_APP_BACKEND}/posts/`; 
+export const UPDATE_EXISTING_POST_URL = `${api}/posts/`;
 
 // `DELETE /posts/:id` | Sets the deleted flag for a post to 'true'. <br> Sets the parentDeleted flag for all child comments to 'true'.
-export const DELETE_POST_URL = `${process.env.REACT_APP_BACKEND}/posts/`; 
+export const DELETE_POST_URL = `${api}/posts/`;

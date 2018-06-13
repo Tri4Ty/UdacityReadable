@@ -1,5 +1,7 @@
+import { api } from '../AppConstants';
+
 export const categoryActionTypes = {
   CATEGORIES_FOUND: 'CATEGORIES_FOUND'
 };
 
-export const GET_CATEGORIES_URL = `${process.env.REACT_APP_BACKEND}/categories`;
+export const GET_CATEGORIES_URL = `${api}/categories`;

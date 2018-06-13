@@ -10,8 +10,7 @@ const creatCategoriesFoundAction = categories => ({
 
 export const fetchAllCategories = () => dispatch => (
   	fetch(GET_CATEGORIES_URL, { 
-    	headers: { 'Authorization': 'whatever-you-want' },
-        credentials: 'include' 
+    	headers: { 'Authorization': 'whatever-you-want' }
   	})
     .then( (res) => res.text() )
     .then((data) => {

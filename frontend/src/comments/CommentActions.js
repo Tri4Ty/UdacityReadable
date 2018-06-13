@@ -31,8 +31,7 @@ const postCommentsEvent = (id, comments) => ({
 
 export const getComments = (id) => dispatch => (
 	fetch(GET_COMMENTS_URL + id + '/comments', { 
-    	headers: { 'Authorization': 'whatever-you-want' },
-        credentials: 'include' 
+    	headers: { 'Authorization': 'whatever-you-want' }
     })
     .then( (res) => res.text() )
     .then((data) => {
@@ -48,7 +47,6 @@ export const voteOnComment = (comment, vote) => {
           'Authorization': 'whatever-you-want',
           'content-type': 'application/json'
         },
-        credentials: 'include',
         body: JSON.stringify({ option: vote })
 	})
 	.then( () => {
@@ -72,7 +70,6 @@ export const createNewComment = newComment => dispatch => (
           'Authorization': 'whatever-you-want',
           'content-type': 'application/json'
         },
-        credentials: 'include',
         body: JSON.stringify(newComment)
 	})
 	.then( () => {
@@ -89,7 +86,6 @@ export const editExistingComment = updatedComment => dispatch => (
           'Authorization': 'whatever-you-want',
           'content-type': 'application/json'
         },
-        credentials: 'include',
         body: JSON.stringify(updatedComment)
 	})
 	.then( () => {
@@ -102,8 +98,7 @@ export const editExistingComment = updatedComment => dispatch => (
 export const deleteComment = comment => dispatch => (  
   fetch(DELETE_COMMENT_URL + comment.id, {
         method: 'DELETE',
-    	headers: { 'Authorization': 'whatever-you-want' },
-        credentials: 'include'
+    	headers: { 'Authorization': 'whatever-you-want' }
 	})
 	.then( () => {
       dispatch(getComments(comment.parentId));
